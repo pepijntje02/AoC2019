@@ -42,7 +42,8 @@ if __name__ == '__main__':
         puzzle[i] = list(map(int, puzzle[i].split('-')))
     if len(puzzle) == 1:
         puzzle = puzzle[0]
+        puzzle[1] += 1 # -> range BETWEEN puzzle input and further range() is used, therefore include last number.
         passwords = possiblePasswords(puzzle)
         possiblePasswordsDigits(passwords)
     else:
-        print('Puzzle input unkown')
+        print('Puzzle input unknown')
