@@ -39,12 +39,6 @@ def check_matching_digits(password):
 
 
 if __name__ == '__main__':
-    if True:
-        puzzle = [254032,789860]
-        passwords = possiblePasswords(puzzle)
-        possiblePasswordsDigits(passwords)
-    #test:
-
-    # print(check_facts('111111'))
-    # print(check_facts('223450'))
-    # print(check_facts('123789'))
+    puzzle = [254032,789860]
+    passwords = possiblePasswords(puzzle)
+    possiblePasswordsDigits(passwords)
