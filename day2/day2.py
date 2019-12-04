@@ -44,13 +44,10 @@ def part2(fname):
             break
     return 100*i + j
 
-
-
-
 if __name__ == '__main__':
     print(80*'-')
     print('Advent of code day 2')
     print(80*'-')
     fname = 'input.txt'
-    print(part1(fname))
+    print(part1(fname)[0])
     print(part2(fname))
