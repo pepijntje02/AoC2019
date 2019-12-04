@@ -39,6 +39,13 @@ def check_matching_digits(password):
 
 
 if __name__ == '__main__':
-    puzzle = [254032,789860]
-    passwords = possiblePasswords(puzzle)
-    possiblePasswordsDigits(passwords)
+    with open('input.txt', "r") as f:
+            puzzle = [l.strip() for l in f.readlines()]
+    for i in range(len(puzzle)):
+        puzzle[i] = list(map(int, puzzle[i].split('-')))
+    if len(puzzle) == 1:
+        puzzle = puzzle[0]
+        passwords = possiblePasswords(puzzle)
+        possiblePasswordsDigits(passwords)
+    else:
+        print('Puzzle input unkown')
