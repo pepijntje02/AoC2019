@@ -30,10 +30,7 @@ def possiblePasswordsDigits(passwords):
 
 def check_matching_digits(password):
     p = np.array(list(map(int, list(str(password)))))
-    temp = []
-    for i in set(p):
-        temp.append(sum(p == i))
-    if 2 not in temp:
+    if 2 not in [sum(p==i) for i in set(p)]:
         return False
     return True
 
