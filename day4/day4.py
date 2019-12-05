@@ -17,8 +17,8 @@ def check_facts(password):
     for i in range(len(password)-1):
         if not all(password[i] <= p for p in password[i:]):
             return False
-        if 0 not in [p[0] - p[1] for p in list(zip(password[:-1], password[1:]))]:
-            return False
+    if 0 not in [p[0] - p[1] for p in list(zip(password[:-1], password[1:]))]:
+        return False
     return True
 
 def possiblePasswordsDigits(passwords):

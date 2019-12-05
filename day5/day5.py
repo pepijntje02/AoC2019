@@ -56,9 +56,8 @@ def intcodeComputer(puzzle, inp, part):
 def part1(fname):
     inp = 1 #given iput
     puzzle = readPuzzle(fname)
-    print(intcodeComputer(puzzle, inp, 1))
-    puzzle = readPuzzle(fname)
-    print(intcodeComputer(puzzle, 5, 2))
+    print(intcodeComputer(puzzle[:], inp, 1))
+    print(intcodeComputer(puzzle[:], 5, 2))
 
 if __name__ == '__main__':
     print(80*'-')
