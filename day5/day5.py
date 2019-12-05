@@ -3,7 +3,7 @@ def readPuzzle(fname):
     puzzle =  f.read().rstrip().split(',')
     return list(map(int, puzzle))
 
-def intcodeComputer(puzzle, inp, part):
+def intcodeComputer(puzzle, ID, part):
     pointer = 0
     while True:
         instruction = list(map(int, str(puzzle[pointer])))
@@ -24,7 +24,7 @@ def intcodeComputer(puzzle, inp, part):
                 break
             pointer += 4
         if opcode == 3:
-            puzzle[puzzle[pointer+1]] = inp
+            puzzle[puzzle[pointer+1]] = ID
             pointer += 2
         if opcode == 4:
             output = puzzle[puzzle[pointer+1]]
@@ -53,15 +53,13 @@ def intcodeComputer(puzzle, inp, part):
                     pointer += 4
 
 
-def part1(fname):
-    inp = 1 #given iput
-    puzzle = readPuzzle(fname)
-    print(intcodeComputer(puzzle[:], inp, 1))
-    print(intcodeComputer(puzzle[:], 5, 2))
-
 if __name__ == '__main__':
     print(80*'-')
     print('Advent of code day 2')
     print(80*'-')
     fname = 'input.txt'
-    part1(fname)
+    puzzle = readPuzzle(fname)
+    print(intcodeComputer(puzzle[:], ID=1, part=1))
+    print(intcodeComputer(puzzle[:], ID=5, part=2))
+
+
