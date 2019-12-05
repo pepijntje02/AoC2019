@@ -55,7 +55,7 @@ def intcodeComputer(puzzle, ID, part):
 
 if __name__ == '__main__':
     print(80*'-')
-    print('Advent of code day 2')
+    print('Advent of code day 5')
     print(80*'-')
     fname = 'input.txt'
     puzzle = readPuzzle(fname)
