@@ -23,7 +23,6 @@ def part2(puzzle):
     orbitTransfer = len(set(pathYou) - set(pathSanta)) + len(set(pathSanta) - set(pathYou)) - 2
     print('Minimum number of orbital transfers required: ', orbitTransfer)
 
-
 def findPath(name, puzzle):
     p = [name]
     while not p[-1] == 'COM':
