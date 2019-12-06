@@ -26,9 +26,7 @@ def part2(puzzle):
 
 def findPath(name, puzzle):
     p = [name]
-    while True:
-        if p[-1] == 'COM':
-            break
+    while not p[-1] == 'COM':
         p.append(puzzle[0][puzzle[1].index(p[-1])])
     return p
 
