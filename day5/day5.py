@@ -5,6 +5,7 @@ def readPuzzle(fname):
 
 def intcodeComputer(puzzle, ID, part):
     pointer = 0
+    output = 0
     while True:
         instruction = list(map(int, str(puzzle[pointer])))
         opcode = int(''.join(map(str, instruction[-2:])))
@@ -27,7 +28,7 @@ def intcodeComputer(puzzle, ID, part):
             puzzle[puzzle[pointer+1]] = ID
             pointer += 2
         if opcode == 4:
-            output = puzzle[puzzle[pointer+1]]
+            output = puzzle[puzzle[pointer+1]] if mode[0] == 0 else puzzle[pointer+1]
             pointer += 2
         if opcode == 99:
             return output
@@ -52,7 +53,6 @@ def intcodeComputer(puzzle, ID, part):
                     puzzle[puzzle[pointer+3]] = 1 if p1 == p2 else 0
                     pointer += 4
 
-
 if __name__ == '__main__':
     print(80*'-')
     print('Advent of code day 5')
@@ -61,5 +61,3 @@ if __name__ == '__main__':
     puzzle = readPuzzle(fname)
     print(intcodeComputer(puzzle[:], ID=1, part=1))
     print(intcodeComputer(puzzle[:], ID=5, part=2))
-
-
